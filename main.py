@@ -32,7 +32,7 @@ MOVIE_DB_IMAGE_URL = 'https://image.tmdb.org/t/p/w500'
 app = Flask(__name__)
 try:
     app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
-    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('SQLALCHEMY_DATABASE_URL_FIXED', 'sqlite:///my-movies.db')
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL_FIXED', 'sqlite:///my-movies.db')
 except:
     app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
     app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('SQLALCHEMY_DATABASE_URI_FIXED', 'sqlite:///my-movies.db')
